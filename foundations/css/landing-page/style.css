@@ -7,25 +7,152 @@ body {
     min-height: 100vh;
 }
 
+body > * {
+    padding: 30px 0;
+}
 
 .header {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 800px;
+}
+
+.container .nav {
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.sub-header {
+    display: flex;
+    justify-content: center;
+}
+
+.sub-header h1 {
     color: white;
-    padding: 10px 20px;
+    font-size: 36px;
+    font-weight: 100;
+}
+
+.sub-header .container {
+    display: flex;
+    justify-content: space-between;
+    width: 860px;
+}
+
+.sub-header img {
+    width: 300px;
+    height: auto;
+}
+
+.container .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.intro a {
+    background-color: #3882F6;
+    padding: 5px 20px;
+    border-radius: 10px;
+} 
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.information p {
+    color: #1F2937;
+    text-align: center;
+    font-size: 18px;
+}
+
+.information .items {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+}
+
+.information .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+}
+
+.information .item img {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    border: 5px solid #3882F6;
+}
+
+.quote {
+    background-color: #E5E7EB;
+    display: flex;
+    justify-content: center;
+}
+
+.quote .container {
+    width: 800px;
+}
+
+.quote p {
+    margin: 0;
+    color: #1F2937;
+}
+
+.quote .content {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.quote .author {
+    text-align: right;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.sign-up {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3882F6;
+    width: 800px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.card a {
+    border: 2px solid white;
+    padding: 5px 20px;
+    border-radius: 10px;
 }
 
 .footer {
     margin-top: auto;
     text-align: center;
-    padding: 10px 20px;
-}
-
-.nav {
-    display: flex;
-    margin-left: auto;
-    gap: 10px;
 }
 
 a {
@@ -34,5 +161,16 @@ a {
 }
 
 p {
+    margin: 0;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    color: #1F2937;
+}
+
+h3 {
+    margin: 0;
     color: white;
 }
