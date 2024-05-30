@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -21,7 +27,7 @@ body > * {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 800px;
+    width: 950px;
 }
 
 .container .nav {
@@ -33,6 +39,8 @@ body > * {
 .sub-header {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .sub-header h1 {
@@ -44,12 +52,13 @@ body > * {
 .sub-header .container {
     display: flex;
     justify-content: space-between;
-    width: 860px;
+    width: 950px;
 }
 
 .sub-header img {
     width: 300px;
     height: auto;
+    align-self: flex-start;
 }
 
 .container .intro {
@@ -72,6 +81,8 @@ body > * {
     justify-content: center;
     align-items: center;
     background-color: white;
+    gap: 20px;
+    flex: 1;
 }
 
 .information p {
@@ -104,6 +115,8 @@ body > * {
     background-color: #E5E7EB;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .quote .container {
@@ -132,6 +145,8 @@ body > * {
     background-color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .card {
@@ -139,7 +154,8 @@ body > * {
     justify-content: space-between;
     align-items: center;
     background-color: #3882F6;
-    width: 800px;
+    width: 950px;
+    height: 100px;
     padding: 40px;
     border-radius: 10px;
 }
