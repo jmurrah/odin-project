@@ -1,20 +1,3 @@
-function getComputerChoice() {
-    const choices = ['rock', 'paper', 'scissors'];
-    return choices[Math.floor(Math.random() * 3)];
-}
-
-
-function getHumanChoice() {
-    let choice = prompt('Choose rock, paper, or scissors: ');
-
-    while (!['rock', 'paper', 'scissors'].includes(choice)) {
-        choice = prompt('Invalid choice!\nChoose rock, paper, or scissors: ');
-    }
-
-    return choice.toLowerCase();
-}
-
-
 function playRound(humanChoice, computerChoice) {
     let winner = '';
     const winsAgainst = {
@@ -34,21 +17,24 @@ function playRound(humanChoice, computerChoice) {
         winner = 'computer';
     }
 
-    return winner;
+    let score = document.querySelector('.scores').querySelector(`#${winner} p`);
+
+    if (document.querySelector('.scores').querySelector(`#${winner} p`).textContent === '5') {
+        console.log(`${winner} wins the game!`);
+        document.querySelector('.selections').removeEventListener('click');
+    } else {
+        document.querySelector('.scores').querySelector(`#${winner} p`).textContent = parseInt(score.textContent) + 1;
+    }
 }
 
 
-function playGame() {
-    const scores = {
-        'human': 0,
-        'computer': 0,
-        'tie': 0
-    };
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * 3)];
+}
 
-    for (let i = 0; i < 5; i++) {
-        scores[playRound(getHumanChoice(), getComputerChoice())] += 1;
-    }
-
-    console.log('Final scores: ' + JSON.stringify(scores));
-    console.log('Game over!');
+window.onload = () => {
+    document.querySelector('.selections').addEventListener('click', (e) => {
+        playRound(e.target.id, getComputerChoice());
+    });
 }
