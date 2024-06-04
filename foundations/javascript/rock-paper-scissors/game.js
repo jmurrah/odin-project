@@ -18,23 +18,24 @@ function playRound(humanChoice, computerChoice) {
     }
 
     let score = document.querySelector('.scores').querySelector(`#${winner} p`);
+    score.textContent = parseInt(score.textContent) + 1;
 
-    if (document.querySelector('.scores').querySelector(`#${winner} p`).textContent === '5') {
+    if (score.textContent === '5' && winner !== 'tie') {
+        document.querySelector('.selections').removeEventListener('click', getHumanChoice);
         console.log(`${winner} wins the game!`);
-        document.querySelector('.selections').removeEventListener('click');
-    } else {
-        document.querySelector('.scores').querySelector(`#${winner} p`).textContent = parseInt(score.textContent) + 1;
-    }
+        alert(`${winner} wins the game!`);
+    } 
 }
-
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     return choices[Math.floor(Math.random() * 3)];
 }
 
-window.onload = () => {
-    document.querySelector('.selections').addEventListener('click', (e) => {
-        playRound(e.target.id, getComputerChoice());
-    });
+const getHumanChoice = (e) => {
+    playRound(e.target.id, getComputerChoice());
 }
+
+window.onload = () => {
+    document.querySelector('.selections').addEventListener('click', getHumanChoice);
+};
