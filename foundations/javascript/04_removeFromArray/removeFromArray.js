@@ -1,6 +1,6 @@
-const removeFromArray = function(arr, valueToRemove) {
-    return arr.filter(function(currentVal) {
-        return currentVal !== valueToRemove;
+const removeFromArray = function(arr, ...valuesToRemove) {
+    return arr.filter((currentVal) => {
+        return !valuesToRemove.includes(currentVal);
     });
 };
 
