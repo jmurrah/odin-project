@@ -67,24 +67,19 @@ window.onload = () => {
 
         if (["add", "subtract", "multiply", "divide"].includes(id)) {
             handleOperation(id);
-
         } else if (id === "equals") {
             if (STACK.length === 3) {
                 operate(STACK[0], STACK[2], STACK[1]);
             }
-
         } else if (id === "clear") {
             STACK.splice(0, STACK.length, 0); ;
             changeDisplay(0);
-
         } else if (id === "sign") {
             lastElement *= -1;
             changeDisplay(lastElement);
-
         } else if (id === "percentage") {
             lastElement /= 100;
             changeDisplay(lastElement);
-
         } else {
             handleNumber(id);
         }
