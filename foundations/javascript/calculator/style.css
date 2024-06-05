@@ -3,6 +3,7 @@
 *::after {
     box-sizing: border-box;
     border-radius: 10px;
+    margin: 0;
 }
 
 body {
@@ -23,15 +24,16 @@ body {
     padding: 10px;
 }
 
-#screen {
+#display {
     background-color: gray;
     height: 100px;
     display: flex;
-    justify-content: right;
-    align-items: center;
+    justify-content: flex-end;
     font-size: 80px;
     margin-bottom: 10px;
     padding-right: 10px;
+    align-items: center;
+    overflow: hidden;
 }
 
 #buttons {
