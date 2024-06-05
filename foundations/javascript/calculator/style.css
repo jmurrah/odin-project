@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+#calculator {
+    background-color: rgb(77, 77, 77);
+    width: 500px;
+    height: 625px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#screen {
+    background-color: gray;
+    height: 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 80px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+#buttons > button {
+    flex-basis: 25%;
+    font-size: 34px;
+}
+
+#buttons #zero {
+    flex-basis: 50%;
+}
+
+.blue {
+    background-color: rgb(68, 127, 255);
+}
+
+.orange {
+    background-color: rgb(255, 145, 0);
+}
+
+.purple {
+    background-color: rgb(175, 0, 245);
+}
