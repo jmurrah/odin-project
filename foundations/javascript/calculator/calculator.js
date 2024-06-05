@@ -1,14 +1,9 @@
 let STACK = [0];
 
 function changeDisplay(number) {
-    if (number.toString().length > 10) {
-        number = number.toExponential(5);
-    } else {
-        number = parseFloat(number);
-    }
-    document.querySelector("#display").textContent = number;
+    STACK[STACK.length - 1] = Number(number.toFixed(2));
+    document.querySelector("#display").textContent = STACK[STACK.length - 1];
 }
-
 
 function operate(n1, n2, operation) {
     const operations = {
@@ -21,7 +16,6 @@ function operate(n1, n2, operation) {
     STACK.splice(0, STACK.length, operations[operation](n1, n2));
     changeDisplay(STACK[0]);
 }
-
 
 function handleOperation(operation) {
     if (STACK.length === 3) {
@@ -66,23 +60,35 @@ function handleNumber(number) {
 
 window.onload = () => {
     const buttons = document.querySelector("#buttons");
+
     buttons.addEventListener("click", (e) => {
         const id = e.target.id;
+        let lastElement = STACK[STACK.length - 1];
 
         if (["add", "subtract", "multiply", "divide"].includes(id)) {
             handleOperation(id);
+
         } else if (id === "equals") {
             if (STACK.length === 3) {
                 operate(STACK[0], STACK[2], STACK[1]);
             }
+
         } else if (id === "clear") {
             STACK.splice(0, STACK.length, 0); ;
             changeDisplay(0);
+
+        } else if (id === "sign") {
+            lastElement *= -1;
+            changeDisplay(lastElement);
+
+        } else if (id === "percentage") {
+            lastElement /= 100;
+            changeDisplay(lastElement);
+
         } else {
             handleNumber(id);
         }
-
+        
         console.log(STACK);
     });
-
 }
